@@ -5,7 +5,7 @@ export default function App() {
   const [img1, setImg1] = useState(require("./src/escola1.png"));
   const [img2, setImg2] = useState(require("./src/escola3.png"));
   const [img3, setImg3] = useState(require("./src/escola5.png"));
-  const [img4, setImg4] = useState(require("./src/escola5.png"));
+  const [img4, setImg4] = useState(require("./src/escola8.png"));
 
   function mudarImg1() {
     setImg1(
@@ -33,9 +33,9 @@ export default function App() {
 
   function mudarImg4() {
     setImg4(
-      img4 === require("./src/escola5.png")
-        ? require("./src/escola6.png")
-        : require("./src/escola5.png")
+      img4 === require("./src/escola8.png")
+        ? require("./src/escola7.png")
+        : require("./src/escola8.png")
     );
   }
 
@@ -44,6 +44,10 @@ export default function App() {
       <View style={styles.container1}>
         <Image source={img1} style={styles.imagem1} />
         <TouchableOpacity style={styles.botao1} onPress={mudarImg1}>
+        <Image
+            source={require('./src/refresh.png')}
+            style={styles.icon}
+          />
           <Text style={styles.botaoTexto}>MUDAR IMAGEM</Text>
         </TouchableOpacity>
       </View>
@@ -51,6 +55,10 @@ export default function App() {
       <View style={styles.container2}>
         <Image source={img2} style={styles.imagem2} />
         <TouchableOpacity style={styles.botao2} onPress={mudarImg2}>
+        <Image
+            source={require('./src/refresh.png')}
+            style={styles.icon}
+          />
           <Text style={styles.botaoTexto}>MUDAR IMAGEM</Text>
         </TouchableOpacity>
       </View>
@@ -58,6 +66,12 @@ export default function App() {
       <View style={styles.container3}>
         <Image source={img3} style={styles.imagem3} />
         <TouchableOpacity style={styles.botao3} onPress={mudarImg3}>
+          {/* Ícone do botão */}
+          <Image
+            source={require('./src/refresh.png')}
+            style={styles.icon}
+          />
+          {/* Texto do botão */}
           <Text style={styles.botaoTexto}>MUDAR IMAGEM</Text>
         </TouchableOpacity>
       </View>
@@ -65,6 +79,10 @@ export default function App() {
       <View style={styles.container4}>
         <Image source={img4} style={styles.imagem4} />
         <TouchableOpacity style={styles.botao4} onPress={mudarImg4}>
+        <Image
+            source={require('./src/refresh.png')}
+            style={styles.icon}
+          />
           <Text style={styles.botaoTexto}>MUDAR IMAGEM</Text>
         </TouchableOpacity>
       </View>
@@ -142,24 +160,37 @@ const styles = StyleSheet.create({
     backgroundColor: "green",
     padding: 10,
     borderRadius: 5,
+    flexDirection: 'row', 
+    alignItems: 'center',
   },
   botao2: {
     backgroundColor: "orange",
     padding: 10,
     borderRadius: 5,
+    flexDirection: 'row', 
+    alignItems: 'center',
   },
   botao3: {
     backgroundColor: "red",
     padding: 10,
     borderRadius: 5,
+    flexDirection: 'row', 
+    alignItems: 'center',  
   },
   botao4: {
     backgroundColor: "blue",
     padding: 10,
     borderRadius: 5,
+    flexDirection: 'row', 
+    alignItems: 'center',
   },
   botaoTexto: {
     color: "#fff",
     fontWeight: "bold",
+    marginLeft: 10, 
+  },
+  icon: {
+    width: 20,  
+    height: 20, 
   },
 });
